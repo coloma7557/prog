@@ -4,6 +4,8 @@ public class test {
     static double calculate_imc(double weight, double height){
         double height2 = height * height;
         return weight / height2;
-        
+    }
+    public static double calculateArea(double base, double height){
+        return base * height;
     }
 }
