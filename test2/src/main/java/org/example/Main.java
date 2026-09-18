@@ -18,5 +18,26 @@ public class Main {
 
         double CircleArea = Test.calculateCircleArea(18);
         System.out.println("El area del circulo es: " + CircleArea);
+
+        String mayorEdad = Test.mayor18(17);
+        IO.println(mayorEdad);
+
+        String altoBajo = Test.EsAlto(5.38);
+        IO.println(altoBajo);
+
+        Boolean bisiesto = Test.EsBisiesto(365);
+        IO.println(bisiesto);
+
+        Double Minior1 = Test.getMinior(15, 17);
+        IO.println(Minior1);
+
+        int Minior2 = Test.getMinior2(28, 50);
+        IO.println(Minior2);
+
+        Double Minior3 = Test.getMinior3(19, 30);
+        IO.println(Minior3);
+
+        int Higher = Test.getHigher(-12, 0, -17);
+        IO.println(Higher);
     }
 }
