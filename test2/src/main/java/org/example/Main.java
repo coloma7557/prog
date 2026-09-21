@@ -39,5 +39,8 @@ public class Main {
 
         int Higher = Test.getHigher(-12, 0, -17);
         IO.println(Higher);
+
+        int Maior = Test.getMaior(18, 20, 4);
+        IO.println(Maior);
     }
 }

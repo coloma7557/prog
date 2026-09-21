@@ -56,6 +56,9 @@ public class Test {
         else
             return num2;
     }
+    public static int getMinior3(int a, int b, int c){
+        return getMinior2(a, getMinior2(b, c));
+    }
 
     public static double getMinior3(double num1, double num2) {
         double result;
@@ -77,5 +80,32 @@ public class Test {
         }
     }
 
+    public static int getMayor(int a,int b, int c){
+        if (a > b) {
+            if (a > c) {
+                return a;
+            } else {
+                return c;
+            }
+        } else {
+            if (b > c) {
+                return b;
+            } else {
+                return c;
+            }
+        }
+    }
+
+    public static int getMaior(int a, int b, int c){
+        int result = a;
+        if (b > result)
+            result = b;
+        if (c > result)
+            result = c;
+        return result;
+    }
+
 }
+
+
 
