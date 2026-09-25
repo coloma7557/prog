@@ -31,6 +31,7 @@ public class Test2 {
     public static double interpol(double value, double min, double max){
         return min + getDistance(min, max) * value;
     }
+
 }
 //Valor absoluto de la resta de los 2
 //Saturar (2, 7, 10) -> Devuelve 2 porque es menor
