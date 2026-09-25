@@ -43,7 +43,7 @@ public class Main {
         int Maior = Test.getMaior(18, 20, 4);
         IO.println(Maior);
 
-        double interpolar = Test2.interpol(0.0, 5000, 20000);
+        double interpolar = Test2.getInterpol(0.5, -3000, 3000);
         IO.println((interpolar));
 
     }

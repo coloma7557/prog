@@ -1,9 +1,6 @@
 package org.example;
 
 
-
-
-
 public class Test2 {
 
     //Función que devuelva un numero absoluto
@@ -28,9 +25,13 @@ public class Test2 {
             return max;
         return value;
     }
-    public static double interpol(double value, double min, double max){
-        return min + getDistance(min, max) * value;
+    public static double getInterpol(double value, double min, double max){
+        return min + (max - min) * value;
     }
+
+    //Función que calcula una ecuación de segundo grado ax**2 +bx+c = 0
+
+    public static double
 
 }
 //Valor absoluto de la resta de los 2
@@ -38,3 +39,5 @@ public class Test2 {
 //Saturar (11, 7, 10) -> Devuelve 10 porque es mayor
 //Saturar (8, 7, 10) -> Devuelve 8 porque está entre los 2
 //Interpolo(7, 5, 10)
+//Raiz cuadrada root = Math.sqrt()
+//Devolver NaN si b es negativo o a es 0
