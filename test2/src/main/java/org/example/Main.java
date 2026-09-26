@@ -46,5 +46,8 @@ public class Main {
         double interpolar = Test2.getInterpol(0.5, -3000, 3000);
         IO.println((interpolar));
 
+        double equation = Test2.resolveEquation(2, -12, 16, false);
+        IO.println(equation);
+
     }
 }
