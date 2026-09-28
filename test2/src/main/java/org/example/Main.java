@@ -49,5 +49,10 @@ public class Main {
         double equation = Test2.resolveEquation(2, -12, 16, false);
         IO.println(equation);
 
+        Bucles.printNumber(5);
+        Bucles.recursive(7);
+        Bucles.recursiveReves(8);
+        Bucles.recursiveDoble(4);
+        Bucles.recursiveTres(5);
     }
 }
