@@ -57,7 +57,8 @@ public class Main {
 //        Bucles.recursiveCuatro(5);
 //
         //Bucles.collatz(-3);
-        Bucles.fibonacci(5);
+        Bucles.fibonacci(2);
+        Bucles.fibonacci2(3);
     }
 
 }

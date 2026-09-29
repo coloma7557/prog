@@ -89,25 +89,32 @@ public class Bucles {
         int i = 0;
         int num1 = 0;
         int num2 = 1;
-        IO.println(num1);
-        IO.println(num2);
 
-        if(n <= 0)
-            IO.println(0);
+        if(n < 0){
             return;
-        else if(n == 1)
-            IO.println(1);
+        }
+            while(i < n) {
+                IO.println(num1);
+                int total = num1 + num2;
+                num1 = num2;
+                num2 = total;
+                i++;
+               }
+            }
+        }
 
-        else{
-        while(i < n) {
+    public static void fibonacci2(int n) {
+        int i = 0;
+        int num1 = 0;
+        int num2 = 1;
+
+        while (i < n) {
+            IO.println(num1);
             int total = num1 + num2;
             num1 = num2;
             num2 = total;
             i++;
         }
-        }
-
-
     }
-}
+
 
