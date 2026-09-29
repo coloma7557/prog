@@ -114,6 +114,7 @@ public class Bucles {
             num1 = num2;
             num2 = total;
             i++;
+
         }
     }
 
