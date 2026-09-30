@@ -57,8 +57,12 @@ public class Main {
 //        Bucles.recursiveCuatro(5);
 //
         //Bucles.collatz(-3);
-        Bucles.fibonacci(2);
-        Bucles.fibonacci2(3);
-    }
+        //Bucles.fibonacci(2);
+        //Bucles.fibonacci2(3);
+        int sum = Bucle_for.getSumatory(20);
+        IO.println(sum);
 
+        int mult = Bucle_for.getProductory(5);
+        IO.println(mult);
+    }
 }
