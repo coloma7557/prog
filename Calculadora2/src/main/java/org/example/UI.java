@@ -7,11 +7,19 @@ public class UI {
         IO.println("Bienvenido!");
     }
 
+    //If option.equals("+-/*")
     //Request al usuario
     public static String printOperationRequest(){
-        IO.println("¿Qué operación vas a realizar?");
 
-        return Keyboard.readString();
+    while(true){
+        IO.println("¿Qué operación vas a realizar?");
+        String option = Keyboard.readString();
+
+        if (option.equals("+") || option.equals("*") || option.equals("-") || option.equals("/") || option.equals("s"))
+            return option;
+        IO.println("No es un operador válido");
+    }
+
     }
 
     //Pido el primer número al usuario
@@ -21,7 +29,6 @@ public class UI {
             String s = Keyboard.readString();
             if (Conversions.isReal(s))
                 return Conversions.toReal(s);
-            printFirstNumberRequest();
         }
     }
 
@@ -30,11 +37,8 @@ public class UI {
         IO.println("Introduce el segundo número");
         while (true) {
             String s = Keyboard.readString();
-            //If option.equals("+-/*")
             if (Conversions.isReal(s))
                 return Conversions.toReal(s);
-            printSecondNumberRequest();
-
         }
     }
     //Muestre el resultado al usuario

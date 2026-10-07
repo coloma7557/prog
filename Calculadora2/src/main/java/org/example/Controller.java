@@ -5,12 +5,15 @@ public class Controller {
     public static void runApp() {
 
         UI.printHeader();
-        while (true){
+
+        boolean on = true;
+        while (on){
 
             String op = UI.printOperationRequest();
 
             if (op.equals("s")) {
                 UI.printBye();
+                on = false;
             }
             else {
                 double n1 = UI.printFirstNumberRequest();

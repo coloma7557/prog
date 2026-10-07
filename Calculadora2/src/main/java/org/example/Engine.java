@@ -9,8 +9,9 @@ public class Engine {
             return n1 + n2;
         if (op.equals("-"))
             return n1 - n2;
-        if (op.equals("/"))
+        if (op.equals("/")) {
             return n1 / n2;
+        }
         if (op.equals("*"))
             return n1 * n2;
         return Double.NaN;
