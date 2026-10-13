@@ -1,4 +1,7 @@
 package org.example;
+import java.util.ArrayList;
+import java.util.List;
+
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -67,5 +70,8 @@ public class MainAntiguo {
 
         Boolean prim = Test3.esPrimo(-46);
         IO.println(prim);
+
+        Double max = Test3.getMax(List.of(-1.0,2.0,4.0,-8.0,2.0));
+        IO.println(max);
     }
 }

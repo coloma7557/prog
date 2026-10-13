@@ -1,4 +1,6 @@
 package org.example;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Test3 {
     //Función que me dice si un número es primo
@@ -13,4 +15,49 @@ public class Test3 {
         return true;
 
     }
+    //Listas
+    public static void lista(int[] numeros){
+
+        List<Integer> listaNumeros = new ArrayList<>();
+
+        listaNumeros.add(1);
+        listaNumeros.add(2);
+        listaNumeros.add(3);
+    }
+
+    //Función que devuelve la media de una lista
+    public static double getAVG(List<Double> list){
+        double accumulated = 0.0;
+
+        if(list == null)
+            return 0.0;
+
+        if(list.size() == 0)
+            return 0.0;
+
+        for(int i=0; i > list.size(); i++){
+            double value = list.get(i);
+            accumulated += value;
+        }
+        return accumulated / list.size();
+    }
+    //Función que nos pasa una lista y me devuelva el valor más grande de la lista
+
+    public static double getMax(List<Double> list){
+        if(list == null)
+            return 0.0;
+        double value = list.getFirst();
+
+        for(int i=1; i < list.size() ;i++){
+
+            value = list.get(i);
+        }
+        return value;
+    }
+
+
 }
+
+//stack y heap
+//Stack Lista = 8 bytes Enteros = 4 bytes
+// l = new (le dice al SO que me reserve espacio para la lista)
