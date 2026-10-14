@@ -59,8 +59,65 @@ public class Test3 {
         }
         return value;
     }
+    //Función que me pasan una lista y tengo que sumar los numeros de ella
+
+    public static double getSum(List<Double> list) {
+
+        if (list == null)
+            return 0.0;
+        if (list.size() == 0)
+            return 0.0;
+
+        double value = list.getFirst();
+
+        for (int i = 1; i < list.size(); i++) {
+            value =  value + list.get(i);
+        }
+        return value;
+    }
+
+    //Función que me devuelva la posición del numero que yo le diga
+
+    public static int getPosition(List<String> list, String value){
+        if (list == null)
+            return -1;
+        if (value == null)
+            return -1;
+
+        for(int i = 0; i < list.size(); i++){
+            String s = list.get(i);
+
+            if(value.equals(s))
+                return i;
+        }
+        return -1;
+    }
+
+    //Funcion que le paso una lista y me devuelve una lista con los elementos al contratio
+
+    public static List<Integer> invertList(List<Integer> list){
+        List<Integer> inverted = new ArrayList<Integer>();
+
+        if(list == null)
+            return null;
+
+        for(int i = list.size() -1 ; i >= 0; i--){
+            inverted.add(list.get(i));
+        }
+        return inverted;
+
+    }
 
 
+    //public static String getOrder(List<Double> list){
+
+     //   if (list == null)
+         //   return "Lista con null";
+       // if (list.size() == 0)
+          //  return "Lista vacia";
+
+
+    //}
 }
 
 //stack y heap

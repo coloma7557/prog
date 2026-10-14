@@ -74,7 +74,32 @@ public class MainAntiguo {
         Double media = Test3.getAVG(List.of(3.0,2.0,4.0));
         IO.println(media);
 
+        //List<Double> l1 = new ArrayList<Double>();
+        //l1.add(5);
+        //l1.add(3);
+
         Double max = Test3.getMax(List.of(-1.0,2.0,4.0,-8.0,2.0));
         IO.println(max);
+
+        /*List<String> list = new ArrayList<String>();
+        list.add("Hola");
+        list.add("Adios");
+        list.add("Buenas");
+
+        int index = Test3.getPosition(list,"Adios");
+        IO.print(index); */
+
+
+        List<Integer> list = new ArrayList<Integer>();
+
+        list.add(1);
+        list.add(4);
+        list.add(8);
+        list.add(10);
+
+        List<Integer> listInverted = Test3.invertList(list);
+
+        IO.print(listInverted);
+
     }
 }
