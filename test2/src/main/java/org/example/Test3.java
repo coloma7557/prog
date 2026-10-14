@@ -35,7 +35,7 @@ public class Test3 {
         if(list.size() == 0)
             return 0.0;
 
-        for(int i=0; i > list.size(); i++){
+        for(int i=0; i < list.size(); i++){
             double value = list.get(i);
             accumulated += value;
         }
@@ -44,13 +44,18 @@ public class Test3 {
     //Función que nos pasa una lista y me devuelva el valor más grande de la lista
 
     public static double getMax(List<Double> list){
+
         if(list == null)
             return 0.0;
+
+        if(list.size() == 0)
+            return 0.0;
+
         double value = list.getFirst();
 
         for(int i=1; i < list.size() ;i++){
-
-            value = list.get(i);
+            if(value < list.get(i))
+                value = list.get(i);
         }
         return value;
     }
