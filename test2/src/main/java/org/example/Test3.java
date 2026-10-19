@@ -109,15 +109,46 @@ public class Test3 {
     }
 
 
-    //public static String getOrder(List<Double> list){
+    //Función que le paso lista de enteros y dewvuelve otra lista con lo que hay pero sólo las posiciones pares
 
-     //   if (list == null)
-         //   return "Lista con null";
-       // if (list.size() == 0)
-          //  return "Lista vacia";
+    public static List<Integer> ParList(List<Integer> l){
+        if(l == null){
+            return new ArrayList<>();
+        }
 
+        List<Integer> result = new ArrayList<>();
 
-    //}
+        for(int i=0; i < l.size() ;i++){
+            int numero = l.get(i);
+
+            if(numero % 2 == 0 ) {
+                result.add(l.get(i));
+            }
+        }
+
+        return result;
+    }
+
+    //Función que le paso una lista y me la devuelve ordenada de menor a mayor
+    public static void getOrder(List<Double> list){
+
+        if (list == null || list.size() == 0) {
+            IO.print("La lista contiene un null o está vacía");
+            return;
+        }
+
+        for(int i = 0; i < list.size() -1 ;i++){
+            double num1 = list.get(i);
+            double num2 = list.get(i + 1);
+
+                if (num1 > num2) {
+                    double temp = num1;
+                    list.set(i, num2);
+                    list.set(i + 1, num1);
+            }
+            list.set(0, num1);
+        }
+    }
 }
 
 //stack y heap

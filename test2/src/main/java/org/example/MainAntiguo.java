@@ -88,18 +88,27 @@ public class MainAntiguo {
 
         int index = Test3.getPosition(list,"Adios");
         IO.print(index); */
+/*
+        List<Integer> l = new ArrayList<Integer>();
+        l.add(20);
+        l.add(17);
+        l.add(11);
+        l.add(4);
+        l.add(6);
 
+        List<Integer> SonPares = Test3.ParList(l);
+        IO.println(SonPares);
+*/
 
-        List<Integer> list = new ArrayList<Integer>();
+        List<Double> list = new ArrayList<Double>();
+        list.add(20.0);
+        list.add(17.0);
+        list.add(11.0);
+        list.add(4.0);
+        list.add(6.0);
 
-        list.add(1);
-        list.add(4);
-        list.add(8);
-        list.add(10);
-
-        List<Integer> listInverted = Test3.invertList(list);
-
-        IO.print(listInverted);
+        Test3.getOrder(list);
+        IO.println(list);
 
     }
 }
