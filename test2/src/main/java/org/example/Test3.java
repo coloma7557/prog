@@ -137,16 +137,17 @@ public class Test3 {
             return;
         }
 
-        for(int i = 0; i < list.size() -1 ;i++){
+        for(int i = 0; i < list.size() -1; i++){
             double num1 = list.get(i);
             double num2 = list.get(i + 1);
 
                 if (num1 > num2) {
                     double temp = num1;
+                    num1 = num2;
+                    num2 = temp;
                     list.set(i, num2);
                     list.set(i + 1, num1);
             }
-            list.set(0, num1);
         }
     }
 }
