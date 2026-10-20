@@ -16,8 +16,11 @@ public class UserUtils {
     public static List<User> filterByName(List<User> list, String namePatter){
 
 
+    }
+    //Fución que me pasa una lista y elimina los que yo quiera quitar
+
+    public static void removeUsers(List<User> users, String name){
 
 
     }
-
 }
