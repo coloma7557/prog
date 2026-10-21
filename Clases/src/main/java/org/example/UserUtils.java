@@ -14,12 +14,12 @@ public class UserUtils {
 
     //Función que recorre una lista y devuelve un usuario
 
-    public static String printUserList(List<User> userList){
+   /* public static String printUserList(List<User> userList){
 
         if(userList == null)
             return "Lista vacía";
 
-    }
+    }*/
 
 
 
