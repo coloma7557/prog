@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
 
     public String name;
@@ -14,4 +17,9 @@ public class User {
             return;
         this.age = age;
     }
+
+    public int getAge(){
+        return this.age;
+    }
+
 }

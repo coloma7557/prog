@@ -7,21 +7,37 @@ public class UserUtils {
 
     //Función que te pasan una lista de usuarios y un nombre y devuelve el usuario con sus datos
 
-    public static void FindUser(List<User> userList, String name){
+    public static User findUser(List<User> userList, String name){
 
+        if(userList == null || name == null)
+            return null;
+
+        for(int i = 0; i < userList.size(); i++){
+            String userName = userList.get(i).name;
+
+            if(userName.equalsIgnoreCase(name)) {
+                User user = userList.get(i);
+                return user;
+            }
+        }
+        return null;
     }
 
 
     //Función que recorre una lista y devuelve un usuario
 
-   /* public static String printUserList(List<User> userList){
+   public static String printUserList(List<User> userList){
 
+        String result = "";
         if(userList == null)
-            return "Lista vacía";
+            return null;
 
-    }*/
-
-
+       for(int i = 0; i < userList.size(); i++){
+           String name = userList.get(i).name;
+           result = result + " " + name;
+        }
+        return result.trim();
+    }
 
     //Función que le paso una lista y me filtre por nombre || Usando contains
 
