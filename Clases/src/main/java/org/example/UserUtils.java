@@ -62,6 +62,30 @@ public class UserUtils {
     //Función que me pasa una lista y elimina los que yo quiera quitar
 
     public static void removeUsers(List<User> users, String name){
+        if(users == null)
+            return;
+        if(name == null)
+            return;
 
+        for(int i = 0; i < users.size(); i++){
+            User u = users.get(i);
+            if(name.equalsIgnoreCase(u.name)) {
+                users.remove(u);
+                return;
+            }
+        }
+        return;
+    }
+
+    //Función que me pasan una lista y la ordena por edad de menor a mayor. Doble For
+
+    public static void sortByAge(List<User> users){
+        if(users == null)
+            return;
+
+        for(int i = 0; i < users.size() -1 ; i++){
+
+
+        }
     }
 }

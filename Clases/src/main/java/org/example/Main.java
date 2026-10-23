@@ -24,7 +24,8 @@ public class Main {
         l.add(u2);
         l.add(u3);
 
-
+        //UsersManage um = new UsersManage();
+        //um.usersList.add();
 
 
         //Llamada a la función que filtra por nombre
@@ -33,9 +34,17 @@ public class Main {
         IO.println(text);*/
 
         //Llamada a la función findUser
-        User resultado = UserUtils.findUser(l, "juan");
-        IO.println("EL usuario es: " +  resultado.name);
+        //User resultado = UserUtils.findUser(l, "juan");
+        //IO.println("EL usuario es: " +  resultado.name);
 
+        //Llamada a la función removeUsers
 
-        }
-    }
+        /*
+        IO.println(l);
+         */
+        UserUtils.removeUsers(l, "Juan");
+        String text = UserUtils.printUserList(l);
+        IO.println(text);
+    } //User u1 = new User("Juan", 1, 32, M);
+      //UsersManager.addUser(u1);
+}

@@ -22,4 +22,9 @@ public class User {
         return this.age;
     }
 
+    public void setGender(int gender){
+        if(gender == 0 || gender == 1)
+            return;
+        this.gender = gender;
+    }
 }
