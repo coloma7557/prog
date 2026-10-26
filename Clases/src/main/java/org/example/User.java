@@ -1,7 +1,6 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class User {
 
@@ -19,6 +18,7 @@ public class User {
     }
 
     public int getAge(){
+
         return this.age;
     }
 
@@ -26,5 +26,9 @@ public class User {
         if(gender == 0 || gender == 1)
             return;
         this.gender = gender;
+    }
+
+    public int getGender(){
+        return this.gender;
     }
 }

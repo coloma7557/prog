@@ -42,9 +42,10 @@ public class Main {
         /*
         IO.println(l);
          */
-        UserUtils.removeUsers(l, "Juan");
-        String text = UserUtils.printUserList(l);
-        IO.println(text);
-    } //User u1 = new User("Juan", 1, 32, M);
-      //UsersManager.addUser(u1);
+//        UserUtils.removeUsers(l, "Juan");
+//        String text = UserUtils.printUserList(l);
+//        IO.println(text);
+//    } //User u1 = new User("Juan", 1, 32, M);
+//      //UsersManager.addUser(u1);
+    }
 }

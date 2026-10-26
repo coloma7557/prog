@@ -84,8 +84,14 @@ public class UserUtils {
             return;
 
         for(int i = 0; i < users.size() -1 ; i++){
+            for(int j = i + 1; j > users.size(); j++){
 
-
+             if(users.get(i).getAge() < users.get(j).getAge()){
+                 User temp = users.get(i);
+                 users.set(i, users.get(j));
+                 users.set(j,temp);
+             }
+            }
         }
     }
 }
