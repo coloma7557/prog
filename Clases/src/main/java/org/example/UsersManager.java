@@ -13,7 +13,6 @@ public class UsersManager {
     }
     //Añadir el usuario a nuestra lista creada arriba
     public void addUser(User user){
-        //User u = new User(user.name, user.id, user.age, user.gender);
         this.userList.add(user);
 
     }

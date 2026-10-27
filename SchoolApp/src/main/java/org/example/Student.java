@@ -1,15 +1,18 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Student {
 
-    public enum GenderKind{
+    public enum genderKind{
         MALE , FEMALE
     }
 
     public String name;
     private long id;
     private int age;
-    public GenderKind gender;
+    public genderKind gender;
 
     public long getStudentId(){
         return this.id;
