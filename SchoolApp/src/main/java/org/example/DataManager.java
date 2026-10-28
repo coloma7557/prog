@@ -35,11 +35,17 @@ public class DataManager {
     //Student
 
     public void addStudent(Student student){
-        this.StudentList.add(student);
+        if(student != null){
+            Student safeStudent = new Student(
+                this.generateStudentId(),
+                student.name,
+                student.getAge(),
+                student.gender);
+            this.StudentList.add(safeStudent);
+        }
     }
 
     public Student getStudent(long id){
-
         if(id == 0)
             return null;
         if(this.StudentList == null)
@@ -54,7 +60,8 @@ public class DataManager {
         return null;
     }
 
-    public Student getStudents(String namePattern){
+    public StudentList getStudents(List namePattern){
+
 
     }
 
@@ -78,6 +85,16 @@ public class DataManager {
         return false;
     }
 
-    public
+    public void updateStudent(Student student){
+        if(student != null){
+            Student safeStudent = new Student(
+                    student.getStudentId(),
+                    student.name,
+                    student.getAge(),
+                    student.gender);
+                    if(indexOfStudent(student) != -1)
+                        StudentList.set(indexOfStudent(student), safeStudent);
+        }
+    }
 
 }

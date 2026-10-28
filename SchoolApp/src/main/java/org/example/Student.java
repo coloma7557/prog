@@ -14,6 +14,15 @@ public class Student {
     private int age;
     public genderKind gender;
 
+    public Student(long id, String name, int age, genderKind gender){
+        this.id = id;
+        this.name = name;
+        setAge(age);
+        this.gender = gender;
+    }
+    public Student() {
+    }
+
     public long getStudentId(){
         return this.id;
     }
