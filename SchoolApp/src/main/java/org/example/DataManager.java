@@ -60,12 +60,17 @@ public class DataManager {
         return null;
     }
 
-    public StudentList getStudents(List namePattern){
+//    public Student getStudents(String namePattern){
+//
+//        for(int i = 0; i < this.StudentList.size(); i++){
+//            Student s = this.StudentList.get(i);
+//
+//        }
+//
+//
+//    }
 
-
-    }
-
-    public int indexOfStudent(Student student){
+    private int indexOfStudent(Student student){
 
         for(int i = 0; i < this.StudentList.size(); i++){
             Student s = this.StudentList.get(i);
@@ -86,15 +91,85 @@ public class DataManager {
     }
 
     public void updateStudent(Student student){
-        if(student != null){
+        if (student != null && student.name != null && !student.name.trim().isEmpty()){
             Student safeStudent = new Student(
                     student.getStudentId(),
                     student.name,
                     student.getAge(),
                     student.gender);
-                    if(indexOfStudent(student) != -1)
-                        StudentList.set(indexOfStudent(student), safeStudent);
+            int index = indexOfStudent(student);
+            if (index != -1) {
+                StudentList.set(index, safeStudent);
+            }
         }
     }
+
+    //Classroom
+
+    public void addClassroom(Classroom classroom){
+        if(classroom != null){
+            Classroom safeClassroom = new Classroom(
+                    this.generateClassroomId(),
+                    classroom.name,
+                    classroom.location);
+            this.ClassroomList.add(safeClassroom);
+        }
+    }
+
+    public Classroom getClassroom(long id){
+        if(id == 0)
+            return null;
+        if(this.ClassroomList == null)
+            return null;
+
+        for(int i = 0; i < this.ClassroomList.size(); i++){
+            Classroom c = this.ClassroomList.get(i);
+            if(c.getClassroomId() == id){
+                return c;
+            }
+        }
+        return null;
+    }
+
+//    public Classroom getClassrooms(){}
+
+    private int indexOfClassroom(Classroom classroom){
+
+        for(int i = 0; i < this.ClassroomList.size(); i++){
+            Classroom c = this.ClassroomList.get(i);
+            if(c.getClassroomId() == classroom.getClassroomId())
+                return i;
+        }
+        return -1;
+    }
+
+    public void updateClassroom(Classroom classroom) {
+        if (classroom != null && classroom.name != null && !classroom.name.trim().isEmpty()) {
+            Classroom safeClassroom = new Classroom(
+                    classroom.getClassroomId(),
+                    classroom.name,
+                    classroom.location
+            );
+            int index = indexOfClassroom(classroom);
+            if (index != -1) {
+                ClassroomList.set(index, safeClassroom);
+            }
+        }
+    }
+
+    public boolean removeClassroom(long id){
+        Classroom c = this.getClassroom(id);
+        if(c != null){
+            int index = this.indexOfClassroom(c);
+            this.ClassroomList.remove(index);
+            return true;
+        }
+        return false;
+    }
+
+    //Links
+
+    private void addLink(long studentId, long classroomId)
+
 
 }
