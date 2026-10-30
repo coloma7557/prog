@@ -70,20 +70,19 @@ public class DataManager {
 //
 //    }
 
-    private int indexOfStudent(Student student){
+    private int indexOfStudent(long id){
 
         for(int i = 0; i < this.StudentList.size(); i++){
             Student s = this.StudentList.get(i);
-            if(s.getStudentId() == student.getStudentId())
+            if(s.getStudentId() == id)
                 return i;
         }
         return -1;
     }
 
     public boolean removeStudent(long id){
-        Student s = this.getStudent(id);
-        if(s != null){
-            int index = this.indexOfStudent(s);
+        int index = this.indexOfStudent(id);
+        if(index != -1){
             this.StudentList.remove(index);
             return true;
         }
@@ -97,7 +96,7 @@ public class DataManager {
                     student.name,
                     student.getAge(),
                     student.gender);
-            int index = indexOfStudent(student);
+            int index = indexOfStudent(student.getStudentId());
             if (index != -1) {
                 StudentList.set(index, safeStudent);
             }
@@ -133,11 +132,11 @@ public class DataManager {
 
 //    public Classroom getClassrooms(){}
 
-    private int indexOfClassroom(Classroom classroom){
+    private int indexOfClassroom(long id){
 
         for(int i = 0; i < this.ClassroomList.size(); i++){
             Classroom c = this.ClassroomList.get(i);
-            if(c.getClassroomId() == classroom.getClassroomId())
+            if(c.getClassroomId() == id)
                 return i;
         }
         return -1;
@@ -150,7 +149,7 @@ public class DataManager {
                     classroom.name,
                     classroom.location
             );
-            int index = indexOfClassroom(classroom);
+            int index = indexOfClassroom(classroom.getClassroomId());
             if (index != -1) {
                 ClassroomList.set(index, safeClassroom);
             }
@@ -158,9 +157,8 @@ public class DataManager {
     }
 
     public boolean removeClassroom(long id){
-        Classroom c = this.getClassroom(id);
-        if(c != null){
-            int index = this.indexOfClassroom(c);
+        int index = this.indexOfClassroom(id);
+        if(index != -1){
             this.ClassroomList.remove(index);
             return true;
         }
@@ -169,7 +167,35 @@ public class DataManager {
 
     //Links
 
-    private void addLink(long studentId, long classroomId)
+    private void addLink(long studentId, long classroomId){
+        if(getStudent(studentId) == null || getClassroom(classroomId) == null){
+            return;
+        }
+        for(int i = 0; i < this.SCLinkList.size(); i++){
+            SCLink linkExist = this.SCLinkList.get(i);
+            if(linkExist.getStudentId() == studentId && linkExist.getClassroomId() == classroomId){
+                return;
+            }
+        }
 
+        SCLink newLink = new SCLink(studentId, classroomId);
+        this.SCLinkList.add(newLink);
+    }
 
+    private void removeLink(long studentId, long classroomId) {
+        if (getStudent(studentId) == null || getClassroom(classroomId) == null) {
+            return;
+        }
+
+        for (int i = 0; i < this.SCLinkList.size(); i++) {
+            SCLink deleteLink = this.SCLinkList.get(i);
+            if (deleteLink.getStudentId() == studentId && deleteLink.getClassroomId() == classroomId) {
+                this.SCLinkList.remove(deleteLink);
+                return;
+            }
+        }
+    }
+    public List<SCLink> getLinks(){
+        return new ArrayList<>(this.SCLinkList);
+    }
 }
