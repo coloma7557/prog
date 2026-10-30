@@ -158,6 +158,7 @@ public class DataManager {
 
     public boolean removeClassroom(long id){
         int index = this.indexOfClassroom(id);
+        //Comprobar si ese estudiante tiene algún link
         if(index != -1){
             this.ClassroomList.remove(index);
             return true;
