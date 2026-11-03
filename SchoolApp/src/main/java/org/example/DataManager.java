@@ -196,7 +196,36 @@ public class DataManager {
             }
         }
     }
-    public List<SCLink> getLinks(){
+    private List<SCLink> getLinks(){
         return new ArrayList<>(this.SCLinkList);
+    }
+
+    public List<Classroom> getStudentClassroom(long id){
+
+        List<Classroom> clasesAlumno = new ArrayList<>();
+
+        for(int i = 0; i < this.SCLinkList.size(); i++){
+            SCLink checkLinkStudent = this.SCLinkList.get(i);
+
+            if(checkLinkStudent.getStudentId() == id){
+                clasesAlumno.add(getClassroom(checkLinkStudent.getClassroomId()));
+            }
+        }
+        return clasesAlumno;
+    }
+
+    public List<Student> getStudentsWithClassroomId(long id){
+
+        List<Student> alumnosEnClases = new ArrayList<>();
+
+        for(int i = 0; i < this.SCLinkList.size(); i++){
+            SCLink clasesClass = this.SCLinkList.get(i);
+
+            if(clasesClass.getClassroomId() == id){
+                Student estudianteEncontrado = getStudent(clasesClass.getStudentId());
+                alumnosEnClases.add(estudianteEncontrado);
+            }
+        }
+        return alumnosEnClases;
     }
 }
