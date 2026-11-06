@@ -9,10 +9,15 @@ public class Controller {
     }
 
     public static int studentMenu() {
-        return 0;
+        UI.printMainMenuOptions();
+        int option = UI.readStudentOptions();
+        return option;
     }
 
     public static int classroomsMenu() {
+        return 0;
+    }
+    public static confirmExit(){
         return 0;
     }
 }

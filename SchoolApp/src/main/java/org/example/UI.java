@@ -16,13 +16,19 @@ public class UI {
         return Conversions.toInteger(option);
     }
 
-    public static String menuAlumno(){
+    public static String menuAlumnoOptions(){
         IO.println("1 - Listar Alumnos");
         IO.println("2 - Buscar Alumnos");
         IO.println("3 - Añadir Alumnos");
         IO.println("4 - Atrás");
         return Keyboard.readString();
-
     }
+
+    public static int readStudentOptions(){
+        String option = Keyboard.readString();
+        return Conversions.toInteger(option);
+    }
+
+    public static String
 
 }
