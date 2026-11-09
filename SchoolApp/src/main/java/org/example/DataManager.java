@@ -60,15 +60,19 @@ public class DataManager {
         return null;
     }
 
-//    public Student getStudents(String namePattern){
-//
-//        for(int i = 0; i < this.StudentList.size(); i++){
-//            Student s = this.StudentList.get(i);
-//
-//        }
-//
-//
-//    }
+    public List<Student> getStudents(String namePattern) {
+        List<Student> result = new ArrayList<>();
+
+        for (int i = 0; i < this.StudentList.size(); i++) {
+            Student student = this.StudentList.get(i);
+
+            if (student.name.contains(namePattern)) {
+                result.add(student);
+            }
+        }
+
+        return result;
+    }
 
     private int indexOfStudent(long id){
 
@@ -130,7 +134,19 @@ public class DataManager {
         return null;
     }
 
-//    public Classroom getClassrooms(){}
+    public List<Classroom> getClassrooms(String namePattern) {
+        List<Classroom> result = new ArrayList<>();
+
+        for (int i = 0; i < this.ClassroomList.size(); i++) {
+            Classroom classroom = this.ClassroomList.get(i);
+
+            if (classroom.name.contains(namePattern)) {
+                result.add(classroom);
+            }
+        }
+
+        return result;
+    }
 
     private int indexOfClassroom(long id){
 
