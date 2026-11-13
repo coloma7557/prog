@@ -12,8 +12,3 @@ public class MainAntiguo {
 
     }
 }
-
-        a b c d
-        a b d c
-        a d b c
-        d a b c
