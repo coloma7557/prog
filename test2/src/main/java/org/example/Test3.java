@@ -172,8 +172,38 @@ public class Test3 {
         l.set(0, last);
     }
 
-    public static void rightShift3(List<String> l){
+    public static void rightShift3(List<String> l) {
+        for (int i = l.size() - 1; i > 0; i--) {
+            var temp = l.get(i);
+            l.set(i, l.get(i - 1));
+            l.set(i - 1, temp);
+        }
+    }
 
+    public static void leftShift1(List<String> l) {
+        var first = l.get(0);
+        for (int i = l.size() - 1; i >= 0; i--) {
+            var aux1 = l.get(i);
+            l.set(i, first);
+            first = aux1;
+        }
+    }
+
+    public static void leftShift2(List<String> l) {
+        var first = l.get(0);
+        for (int i = 0; i < l.size() - 1; i++) {
+            var element = l.get(i + 1);
+            l.set(i, element);
+        }
+        l.set(l.size() - 1, first);
+    }
+
+    public static void leftShift3(List<String> l) {
+        for (int i = 0; i < l.size() - 1; i++) {
+            var temp = l.get(i);
+            l.set(i, l.get(i + 1));
+            l.set(i + 1, temp);
+        }
     }
 
     //Mover la lista una cantidad de veces concreta hacia la derecha
@@ -186,7 +216,7 @@ public class Test3 {
     //Mover la lista una cantidad de veces concreta hacia la izquierda
     public static void leftShiftCount(List<String> l, int count){
         for(int i = 0; i < count; i++){
-            leftShift(l);
+            leftShift1(l);
         }
     }
 
