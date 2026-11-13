@@ -38,4 +38,4 @@ public class HechizoClass {
         this.costeMana = costeMana;
     }
 }
-}
+
