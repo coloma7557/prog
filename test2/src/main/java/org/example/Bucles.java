@@ -3,7 +3,7 @@ package org.example;
 //While(condicion){}
 //Función que recibe un número e imprime hola tantas veces como sea el numero
 
-public class Bucles {
+public class -Bucles {
 
     public static void printNumber(int a) {
         int i = 0;
