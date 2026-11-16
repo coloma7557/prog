@@ -220,6 +220,70 @@ public class Test3 {
         }
     }
 
+    //Funcion que borre todos los usuarios de mayores de cierta edad en una lista
+
+    public static void deleteStudentByAge(List<String> l, int age){
+        if(l == null)
+            return;
+        if(age == 0)
+            return;
+
+        for (int i = l.size() - 1; i >= 0; i--) {
+            int studentAge = Integer.parseInt(l.get(i));
+
+            if (studentAge > age) {
+                l.remove(i);
+            }
+        }
+    }
+
+    //Función que recibe una lista de usuarios y quiero la posición en la que se encuentra el usuario más viejo
+
+    public static int oldUserPosition(List<PruebasTest3> user){
+        if (user == null)
+            return -1;
+
+        int position = -0;
+        int age = -0;
+
+        for (int i = 0; i < user.size(); i++){
+            int userAge = user.get(i).getEdad();
+
+            if(userAge > age){
+                age = userAge;
+                position = i;
+            }
+        }
+        return position;
+    }
+
+
+
+    //Función que le paso una lista de hechizos y me devuelva si hay un hechizo duplicado
+
+    public static boolean hechizosList(HechizoClass hechizoBuscado, List<HechizoClass> hechizo, int position){
+
+
+        for(int i = position; i < hechizo.size(); i++){
+            HechizoClass hechizodeLaLista = hechizo.get(i);
+
+            if(hechizoBuscado.getNombre().equals(hechizodeLaLista.getNombre()) && hechizoBuscado.getCosteMana() == (hechizodeLaLista.getCosteMana()) && hechizodeLaLista.getPoder() == (hechizoBuscado.getPoder()))
+                return true;
+        }
+        return false;
+    }
+
+    public static boolean hayHechizosRepetidos(List<HechizoClass> list){
+        if (list == null || list.isEmpty()) {
+            return false;
+        }
+        for (int i = 0; i < list.size(); i++) {
+            if (hechizosList(list.get(i), list, i + 1)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 //stack y heap
