@@ -17,4 +17,5 @@ public class test5 {
 
 
 //Genéricos
+//<T>
 

@@ -19,12 +19,12 @@ public class ArrayUtils {
         return aux;
     }
 
-   //Función clone para Int
-    public static int[] cloneInt(int[] a){
-        if(a == null)
+    //Función clone para Int
+    public static int[] cloneInt(int[] a) {
+        if (a == null)
             return new int[0];
         int[] aux = new int[a.length];
-        for(int i = 0; i <a.length;i++){
+        for (int i = 0; i < a.length; i++) {
             aux[i] = a[i];
         }
         return aux;
@@ -63,4 +63,55 @@ public class ArrayUtils {
         }
         return aux;
     }
+    //Funcion que me pasan un array de Strings y un texto, y tengo que devolver la posicion (int)
+    // de la primera vez que aparece ese value, o -1 si no esta
+
+    public static int returnPosition(String[] a, String target) {
+        if (a == null || target == null)
+            return -1;
+
+        for (int i = 0; i < a.length; i++) {
+            String aux = a[i];
+            if (aux.equals(target))
+                return i;
+        }
+        return -1;
+    }
+    //Funcion que me pasan un array de Strings y un texto (target), y tengo que devolver
+    //true si ese texto esta en el array o false si no esta
+
+    public static boolean exists(String[] a, String target) {
+        if (returnPosition(a, target) == -1)
+            return false;
+        return true;
+    }
+
+    //Funcion que me pasan un array de Strings y un texto (target), y tengo que devolver cuantas veces
+    // aparece ese texto en el array (int)
+
+    public static int repeat(String[] a, String target) {
+        if (a == null || target == null)
+            return 0;
+
+        int contador = 0;
+        for(int i = 0; i < a.length;i++){
+            if(a[i].equals(target))
+                contador++;
+        }
+        return contador;
+    }
+    //Funcion que me pasan un array de ints y tengo que devolver el numero mas grande del array (int)
+
+//    public static int max(int[] a){
+//        if(a == null || a.length == 0)
+//            return 0;
+//
+//
+//    }
+
 }
+
+//
+
+
+
